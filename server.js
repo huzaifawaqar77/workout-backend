@@ -12,6 +12,10 @@ app.use(cors());
 // routes
 app.use("/api/workouts", workoutRoutes);
 app.use("/api/user", userRoutes);
+
+app.get("/", (req, res) => {
+  req.json({ message: "hello world" });
+});
 mongoose.set("strictQuery", true);
 // connect to db
 mongoose
